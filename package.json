@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack-dev-server --config webpack.config.dev.js --open --port 9000 --progress"
+    "serve": "webpack-dev-server --config webpack.config.dev.js --open --port 9000 --progress",
+    "build":"webpack --config webpack.config.prod.js --progress"
   },
   "keywords": [],
   "author": "",

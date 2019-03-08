@@ -37,3 +37,28 @@
 		less style-loader css-loader less less-loader
 ```
 > 生成环境
+
+```
+1、把开发环境的配置文件拷贝过来
+
+2、把 mode 设置为 production【压缩代码】
+
+3、设置 output ，将来打包出来的东西生成到 dist 目录下面去
+
+4、配置 HtmlWebpackPlugin 打包的时候压缩html
+
+5、使用webpack打包，配置写在package.json中
+	"build":"webpack --config webpack.config.prod.js --progress"
+```
+
+> 开发建议
+
+```
+工作中建议使用脚手架 @vue/cli create-react-app，原因如下
+1、脚手架一般都是官方团队维护，有保证
+
+2、我们自己配置，比较麻烦，并且一旦升级之后，有很多配置都得改
+
+3、如果想对webpack底层更加了解，可以学习一下
+```
+
