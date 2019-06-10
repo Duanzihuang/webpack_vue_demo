@@ -13,7 +13,22 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        // use: ["style-loader", "css-loader"]
+        use: [{
+          loader:'style-loader'
+        },{
+          loader:'css-loader'
+        },{
+          loader:'postcss-loader',
+          options:{
+            plugins:[
+              // require('autoprefixer')({
+              //   browsers:['last 2 version','>1%','ios 7']
+              // })
+              require('autoprefixer')
+            ]
+          }
+        }]
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -34,6 +49,14 @@ module.exports = {
           },
           {
             loader: "less-loader" // compiles Less to CSS
+          },
+          {
+            loader:'postcss-loader',
+            options:{
+              plugins:[
+                require('autoprefixer')
+              ]
+            }
           }
         ]
       }

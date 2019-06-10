@@ -51,6 +51,49 @@
 	"build":"webpack --config webpack.config.prod.js --progress"
 ```
 
+### Css之抽取与压缩【生产环境】
+
+> 抽取
+
+```
+mini-css-extract-plugin
+	https://github.com/webpack-contrib/mini-css-extract-plugin
+```
+
+> 压缩
+
+```
+optimize-css-assets-webpack-plugin
+	https://github.com/NMFR/optimize-css-assets-webpack-plugin
+```
+
+###插件
+
+> 自动清除dist目录
+```
+clean-webpack-plugin
+	https://github.com/johnagan/clean-webpack-plugin
+```
+
+> PostCsss 增强css的功能
+
+```
+postcss-loader
+	https://github.com/postcss/postcss-loader
+
+autoprefixer【css 后置处理器】
+	自动补全浏览器前缀
+	
+px2rem
+	https://github.com/Jinjiang/px2rem-loader
+```
+
+> 资源内联
+
+```
+	raw-loader@0.5.1
+```
+
 > 开发建议
 
 ```
