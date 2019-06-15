@@ -62,6 +62,9 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.vue', '.js', '.json']
+  },
   plugins: [
     // vue-loader 升级到15.x之后必须要这样写
     new VueLoaderPlugin(),

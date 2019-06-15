@@ -105,3 +105,28 @@ px2rem
 3、如果想对webpack底层更加了解，可以学习一下
 ```
 
+### 提取页面公共资源
+
+> 基础库分离
+
+```
+抽离vue、react、react-dom这些基础库
+	html-webpack-externals-plugin
+```
+
+> 公共脚本库分离/代码分割
+
+```
+webpack4自带的 splitChunksPlugin 可以抽取用到的公共模块，也可以抽取公用的基础包，比如vue react react-dom
+
+注意：别忘记在 html-webpack-plugin 中配置chunks了
+```
+
+### tree shaking
+
+```
+一个文件/模块中有很多方法，其中只有某些方法被用到了，那么使用tree shaking就只打包用到的方法，其他没有用到的方法不打包
+
+webpack4.x 的 production 模式默认开启了tree shaking，一个文件中的代码（比如函数）只有导入并且真正使用了才会打包，否则即使是引入了，但是没有使用它也是不会打包进去的
+```
+
