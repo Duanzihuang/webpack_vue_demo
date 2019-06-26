@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const path = require('path')
 const glob = require('glob')
 
@@ -131,6 +131,7 @@ module.exports = {
     extensions: ['.vue', '.js', '.json']
   },
   // 抽取基础库 vue、vue-router、vuex 和 公共js
+  /**
   optimization:{
     splitChunks:{
       // minSize: 0, // 包最小的体积 0代表无条件提取
@@ -148,6 +149,7 @@ module.exports = {
       }
     }
   },
+   */
   // optimization:{
   //   splitChunks:{
   //     minSize: 0, // 包最小的体积 0代表无条件提取
@@ -190,7 +192,6 @@ module.exports = {
       filename: '[name]_[contenthash:8].css'
     }),
     // 抽取基础库 vue、vue-router、vuex
-    /**
     new HtmlWebpackExternalsPlugin({
       externals: [
         {
@@ -210,7 +211,6 @@ module.exports = {
         }
       ]
     })
-    */
   ]
   // ].concat(htmlWebpackPlugins) // 多页配置
 };

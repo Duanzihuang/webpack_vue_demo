@@ -5,6 +5,7 @@
                 {{item}}
             </li>
         </ul>
+        <button @click="loadLazyLoad">懒加载LazyLoad组价</button>
     </div>
 </template>
 
@@ -21,6 +22,13 @@ export default {
         ...mapGetters({
             newsList:'news/getNewsList'
         })
+    },
+    methods:{
+        loadLazyLoad(){
+            import('./LazyLoad').then(res => {
+                console.log(res)
+            })
+        }
     }
 }
 </script>
